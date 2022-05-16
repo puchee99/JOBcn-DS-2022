@@ -16,23 +16,23 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/puchee99/JOBcn-DS">
+  <a href="https://github.com/puchee99/JOBcn-DS-2022">
     <img src="images/pytorch.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">JOBcn-DS</h3>
+  <h3 align="center">JOBcn-DS-2022</h3>
 
   <p align="center">
     Online Data Science hackathon  (JOBarcelona 2022)
     <br />
-    <a href="https://github.com/puchee99/JOBcn-DS"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/puchee99/JOBcn-DS-2022"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/puchee99/JOBcn-DS">View Demo</a>
+    <a href="https://github.com/puchee99/JOBcn-DS-2022">View Demo</a>
     ·
-    <a href="https://github.com/puchee99/JOBcn-DS/issues">Report Bug</a>
+    <a href="https://github.com/puchee99/JOBcn-DS-2022/issues">Report Bug</a>
     ·
-    <a href="https://github.com/puchee99/JOBcn-DS/issues">Request Feature</a>
+    <a href="https://github.com/puchee99/JOBcn-DS-2022/issues">Request Feature</a>
   </p>
 </div>
 
@@ -155,7 +155,7 @@ The predictions from the `test_x.csv` file can be found in the `output/results` 
 
 Arnau Puche  - [@arnau_puche_vila](https://www.linkedin.com/in/arnau-puche-vila-ds/) - arnaupuchevila@gmail.com
 
-Project Link: [https://github.com/puchee99/JOBcn-DS](https://github.com/puchee99/JOBcn-DS)
+Project Link: [https://github.com/puchee99/JOBcn-DS-2022](https://github.com/puchee99/JOBcn-DS)
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -164,16 +164,16 @@ Project Link: [https://github.com/puchee99/JOBcn-DS](https://github.com/puchee99
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/puchee99/JOBcn-DS.svg?style=for-the-badge
-[contributors-url]: https://github.com/puchee99/JOBcn-DS/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/puchee99/JOBcn-DS.svg?style=for-the-badge
-[forks-url]: https://github.com/puchee99/JOBcn-DS/network/members
-[stars-shield]: https://img.shields.io/github/stars/puchee99/JOBcn-DS.svg?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors/puchee99/JOBcn-DS-2022.svg?style=for-the-badge
+[contributors-url]: https://github.com/puchee99/JOBcn-DS-2022/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/puchee99/JOBcn-DS-2022.svg?style=for-the-badge
+[forks-url]: https://github.com/puchee99/JOBcn-DS-2022/network/members
+[stars-shield]: https://img.shields.io/github/stars/puchee99/JOBcn-DS-2022.svg?style=for-the-badge
 [stars-url]: https://github.com/puchee99/JOBcn-DS/stargazers
 [issues-shield]: https://img.shields.io/github/issues/puchee99/JOBcn-DS.svg?style=for-the-badge
-[issues-url]: https://github.com/puchee99/JOBcn-DS/issues
-[license-shield]: https://img.shields.io/github/license/puchee99/JOBcn-DS.svg?style=for-the-badge
-[license-url]: https://github.com/puchee99/JOBcn-DS/blob/main/LICENSE.txt
+[issues-url]: https://github.com/puchee99/JOBcn-DS-2022/issues
+[license-shield]: https://img.shields.io/github/license/puchee99/JOBcn-DS-2022.svg?style=for-the-badge
+[license-url]: https://github.com/puchee99/JOBcn-DS-2022/blob/main/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/arnau-puche-vila-ds/
 [product-screenshot]: images/figures.png
