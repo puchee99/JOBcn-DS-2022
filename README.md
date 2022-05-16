@@ -150,24 +150,20 @@ In the best training we have an accuracy of 0.92 predicting test set(20% of data
 
 The predictions from the `test_x.csv` file can be found in the `output/results` folder in the `results.csv` file.
 
-#### ACCURACY
+#### ACCURACY:
 ![accuracy]
-
 [accuracy image][accuracy]
 
-#### CONFUSION MATRIX
+#### CONFUSION MATRIX:
 ![CM]
-
 [CM image][CM]
 
-#### LOSS
+#### LOSS:
 ![loss]
-
 [loss image][loss]
 
-#### ROC
+#### ROC:
 ![roc]
-
 [roc image][roc]
 
 <!-- CONTACT -->
