@@ -1,3 +1,3 @@
-2022-05-17 01:53:33,451 - INFO - Computation device: cpu
-2022-05-17 01:53:33,517 - INFO - Predictions from test_x.csv saved in results.csv
-2022-05-17 01:53:33,540 - INFO - 0.8859127163887024 0.8700928092002869 0.8732143044471741
+2022-05-17 01:58:56,209 - INFO - Computation device: cpu
+2022-05-17 01:58:56,316 - INFO - Predictions from test_x.csv saved in results.csv
+2022-05-17 01:58:56,343 - INFO - 0.886904776096344 0.8679514527320862 0.8732143044471741

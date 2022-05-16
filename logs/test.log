@@ -60,3 +60,30 @@
 2022-05-17 01:53:33,451  - INFO - Computation device: cpu
 2022-05-17 01:53:33,517  - INFO - Predictions from test_x.csv saved in results.csv
 2022-05-17 01:53:33,540  - INFO - 0.8859127163887024 0.8700928092002869 0.8732143044471741
+2022-05-17 01:57:34,283  - INFO - Computation device: cpu
+
+2022-05-17 01:57:34,990  - INFO - Running Model
+: MulticlassSimpleClassification(
+  (layer1): Linear(in_features=4, out_features=256, bias=True)
+  (layer2): Linear(in_features=256, out_features=128, bias=True)
+  (layer3): Linear(in_features=128, out_features=64, bias=True)
+  (out): Linear(in_features=64, out_features=3, bias=True)
+)
+2022-05-17 01:57:34,990  - INFO - 42,627 total parameters.
+2022-05-17 01:57:34,990  - INFO - 42,627 training parameters.
+2022-05-17 01:57:42,303  - INFO - Epoch [200/4000],  Loss: 0.7883  Accuracy: 0.7659 
+2022-05-17 01:57:50,504  - INFO - Epoch [400/4000],  Loss: 0.7594  Accuracy: 0.7966 
+2022-05-17 01:57:58,228  - INFO - Epoch [600/4000],  Loss: 0.7248  Accuracy: 0.8323 
+2022-05-17 01:58:04,985  - INFO - Epoch [800/4000],  Loss: 0.6896  Accuracy: 0.8622 
+2022-05-17 01:58:11,590  - INFO - Epoch [1000/4000],  Loss: 0.6867  Accuracy: 0.8630 
+2022-05-17 01:58:18,192  - INFO - Epoch [1200/4000],  Loss: 0.6837  Accuracy: 0.8658 
+2022-05-17 01:58:24,323  - INFO - Epoch [1400/4000],  Loss: 0.6836  Accuracy: 0.8658 
+2022-05-17 01:58:30,698  - INFO - Epoch [1600/4000],  Loss: 0.6835  Accuracy: 0.8658 
+2022-05-17 01:58:36,742  - INFO - Epoch [1800/4000],  Loss: 0.6833  Accuracy: 0.8672 
+2022-05-17 01:58:42,866  - INFO - Epoch [2000/4000],  Loss: 0.6831  Accuracy: 0.8672 
+2022-05-17 01:58:51,851  - INFO - Epoch [2200/4000],  Loss: 0.6834  Accuracy: 0.8672 
+2022-05-17 01:58:52,312  - INFO - Finish training model 
+
+2022-05-17 01:58:56,209  - INFO - Computation device: cpu
+2022-05-17 01:58:56,316  - INFO - Predictions from test_x.csv saved in results.csv
+2022-05-17 01:58:56,343  - INFO - 0.886904776096344 0.8679514527320862 0.8732143044471741
