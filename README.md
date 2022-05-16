@@ -98,11 +98,11 @@ Distribution of the data in the variables with a greater correlation with `y`:
 
 First, clone the repository:
    ```sh
-   git clone https://github.com/puchee99/JOBcn-DS.git
+   git clone https://github.com/puchee99/JOBcn-DS-2022.git
    ```
 Access to the project folder with:
   ```sh
-  cd JOBcn-DS
+  cd JOBcn-DS-2022
   ```
 
 We will create a virtual environment with `python3`
@@ -169,8 +169,8 @@ Project Link: [https://github.com/puchee99/JOBcn-DS-2022](https://github.com/puc
 [forks-shield]: https://img.shields.io/github/forks/puchee99/JOBcn-DS-2022.svg?style=for-the-badge
 [forks-url]: https://github.com/puchee99/JOBcn-DS-2022/network/members
 [stars-shield]: https://img.shields.io/github/stars/puchee99/JOBcn-DS-2022.svg?style=for-the-badge
-[stars-url]: https://github.com/puchee99/JOBcn-DS/stargazers
-[issues-shield]: https://img.shields.io/github/issues/puchee99/JOBcn-DS.svg?style=for-the-badge
+[stars-url]: https://github.com/puchee99/JOBcn-DS-2022/stargazers
+[issues-shield]: https://img.shields.io/github/issues/puchee99/JOBcn-DS-2022.svg?style=for-the-badge
 [issues-url]: https://github.com/puchee99/JOBcn-DS-2022/issues
 [license-shield]: https://img.shields.io/github/license/puchee99/JOBcn-DS-2022.svg?style=for-the-badge
 [license-url]: https://github.com/puchee99/JOBcn-DS-2022/blob/main/LICENSE.txt
