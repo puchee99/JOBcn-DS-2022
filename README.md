@@ -72,7 +72,7 @@ Distribution of the data in the variables with a greater correlation with `y`:
 
 ![product-screenshot]
 
-[Image][product-screenshot]
+[Features image][product-screenshot]
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -150,6 +150,22 @@ In the best training we have an accuracy of 0.92 predicting test set(20% of data
 
 The predictions from the `test_x.csv` file can be found in the `output/results` folder in the `results.csv` file.
 
+![accuracy]
+
+[accuracy image][accuracy]
+
+![CM]
+
+[CM image][CM]
+
+![loss]
+
+[loss image][loss]
+
+![roc]
+
+[roc image][roc]
+
 <!-- CONTACT -->
 ## Contact
 
@@ -176,4 +192,8 @@ Project Link: [https://github.com/puchee99/JOBcn-DS-2022](https://github.com/puc
 [license-url]: https://github.com/puchee99/JOBcn-DS-2022/blob/main/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/arnau-puche-vila-ds/
-[product-screenshot]: images/figures.png
+[product-screenshot]: output/plots/features_distribution.png
+[accuracy]: output/plots/MulticlassSimpleClassification_accuracy.png
+[CM]: output/plots/MulticlassSimpleClassification_cm.png
+[loss]: output/plots/MulticlassSimpleClassification_loss.png
+[roc]: output/plots/MulticlassSimpleClassification_roc.png
