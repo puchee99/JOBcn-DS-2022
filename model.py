@@ -3,7 +3,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 class MulticlassSimpleClassification(nn.Module):
-        def __init__(self, input_dim, output_dim, l1=256, l2=128, l3=64):
+        def __init__(self, input_dim, output_dim, l1=512, l2=128, l3=64):
             super(MulticlassSimpleClassification, self).__init__()
             self.name = 'MulticlassSimpleClassification'
             self.layer1 = nn.Linear(input_dim, l1)

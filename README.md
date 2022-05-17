@@ -146,7 +146,7 @@ The train.py and test.py documents can be executed with bash using different arg
 
 ## Results
 
-In the best training we have an accuracy of 0.92 predicting test set(20% of data from `train.csv`).
+In the best training we have an accuracy of 0.923 predicting test set(20% of data from `train.csv`).
 
 The predictions from the `test_x.csv` file can be found in the `output/results` folder in the `results.csv` file.
 
