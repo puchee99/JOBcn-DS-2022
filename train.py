@@ -137,7 +137,7 @@ def validate_batch(model, val_loader, criterion):
 def run_multiple_models(X_train, X_test, y_train, y_test):
     #model     = MulticlassClassification(X_train.shape[1], 3)
     model     = MulticlassSimpleClassification(X_train.shape[1], 3).to(device)
-    model.apply(init_weights)
+    #model.apply(init_weights)
     run_model(model, X_train, X_test, y_train, y_test)
     #model2     = MulticlassSimpleClassification(X_train.shape[1], 3).to(device)
     #model2.apply(init_weights)
