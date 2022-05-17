@@ -5,6 +5,7 @@ import numpy as np
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
+from sklearn.utils import resample
 import torch 
 from torch.utils.data import Dataset, DataLoader, WeightedRandomSampler
 from torch.autograd import Variable
@@ -27,18 +28,28 @@ def get_dataframe(path_data: str, file_extension: str) -> pd.DataFrame:
     return df 
 
 #------------------------get features to train, target_values, name_cols---------------------------------
-def clean_data(df:pd.DataFrame, label_col_name:str, select_corr_col:bool=True) -> tuple[pd.DataFrame, pd.DataFrame, list]:
+def clean_data(df:pd.DataFrame, label_col_name:str, select_corr_col:bool=True, resample_df:bool=True) -> tuple[pd.DataFrame, pd.DataFrame, list]:
+    df_train = df.copy()
+    if resample_df:
+        df_0 = df_train[df_train[label_col_name] == 0]
+        df_1 = df_train[df_train[label_col_name] == 1]
+        df_2 = df_train[df_train[label_col_name] == 2]
+
+        new_0 = resample(df_0, replace=True, n_samples=1, random_state=123) 
+        new_1 = resample(df_1, replace=True, n_samples=1, random_state=123)
+        new_2 =  resample(df_2, replace=True, n_samples=3000, random_state=123)
+
+        df_train =pd.concat([df_train, new_0, new_1, new_2])
+    y = df_train[label_col_name]
     if select_corr_col:
         #grab the variables that are related to the target column
-        corr = df.corr().abs()[label_col_name]
+        corr = df_train.corr().abs()[label_col_name]
         corr = corr[corr != 1]
         corr = corr[corr > 0.05]
         select_columns = list(corr.index)
-        df_select_columns = df[select_columns]
+        df_select_columns = df_train[select_columns]
         df_train = df_select_columns.copy()
-    else:
-        df_train = df.copy()
-    y = df[label_col_name]
+
     return df_train, y, select_columns
 
 def create_datasets(filename:str, target_col:str) -> tuple[pd.DataFrame, pd.DataFrame, list]:

@@ -154,7 +154,7 @@ def run_model(model,X_train,X_test,y_train, y_test):
     valid_acc = np.zeros((EPOCHS,))
     last_loss, dif_last_loss, epoch = np.inf, 1e5, 0
 
-    while dif_last_loss > 0.00000001 and epoch < EPOCHS:
+    while dif_last_loss > 0.000000001 and epoch < EPOCHS:
         train_epoch_loss, train_epoch_acc = train(model, X_train,y_train, optimizer, criterion)
         valid_epoch_loss, valid_epoch_acc = validate(model, X_test, y_test, criterion)
         train_loss[epoch], valid_loss[epoch] = train_epoch_loss, valid_epoch_loss
