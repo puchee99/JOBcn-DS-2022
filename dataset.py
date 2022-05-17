@@ -7,7 +7,6 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
 from sklearn.utils import resample
 import torch 
-from torch.utils.data import Dataset, DataLoader, WeightedRandomSampler
 from torch.autograd import Variable
 
 
@@ -37,7 +36,7 @@ def clean_data(df:pd.DataFrame, label_col_name:str, select_corr_col:bool=True, r
 
         new_0 = resample(df_0, replace=True, n_samples=1, random_state=123) 
         new_1 = resample(df_1, replace=True, n_samples=1, random_state=123)
-        new_2 =  resample(df_2, replace=True, n_samples=3000, random_state=123)
+        new_2 =  resample(df_2, replace=True, n_samples=1000, random_state=123)
 
         df_train =pd.concat([df_train, new_0, new_1, new_2])
     y = df_train[label_col_name]
@@ -83,51 +82,6 @@ def get_train_test_val_variable(X_train, X_test, X_val, y_train, y_test, y_val) 
     X_val  = Variable(torch.from_numpy(X_val)).float()
     y_val  = Variable(torch.from_numpy(y_val)).long()
     return X_train, X_test, X_val, y_train, y_test, y_val
-
-class ClassifierDataset(Dataset):
-    def __init__(self, X_data, y_data):
-        self.X_data = X_data
-        self.y_data = y_data
-        
-    def __getitem__(self, index):
-        return self.X_data[index], self.y_data[index]
-        
-    def __len__ (self):
-        return len(self.X_data)
-
-def get_classifier_datasets(X_train: np.array, X_test:np.array, X_val:np.array, y_train, y_test, y_val) -> tuple[ClassifierDataset,ClassifierDataset,ClassifierDataset]:
-    train_dataset = ClassifierDataset(torch.from_numpy(X_train).float(), torch.from_numpy(y_train).long())
-    val_dataset = ClassifierDataset(torch.from_numpy(X_val).float(), torch.from_numpy(y_val).long())
-    test_dataset = ClassifierDataset(torch.from_numpy(X_test).float(), torch.from_numpy(y_test).long())
-    return train_dataset, val_dataset, test_dataset
-
-def get_weight_features(train_dataset, y_train,print_weights=True) -> tuple[torch.tensor, WeightedRandomSampler]:
-    target_list = []
-    for _, t in train_dataset:
-        target_list.append(t)
-
-    target_list = torch.tensor(target_list)
-    class_count = [i for i in get_class_distribution(y_train).values()]
-    class_weights = 1./torch.tensor(class_count, dtype=torch.float) 
-    if print_weights:
-        print(class_weights)
-    class_weights_all = class_weights[target_list]
-    weighted_sampler = WeightedRandomSampler(
-        weights=class_weights_all,
-        num_samples=len(class_weights_all),
-        replacement=True
-    )
-    return class_weights, weighted_sampler
-
-def get_loaders(train_dataset, val_dataset, test_dataset, weighted_sampler) -> tuple[DataLoader, DataLoader, DataLoader]:
-    train_loader = DataLoader(dataset=train_dataset,
-                            batch_size=64,
-                            sampler=weighted_sampler
-    )
-    val_loader = DataLoader(dataset=val_dataset, batch_size=1)
-    test_loader = DataLoader(dataset=test_dataset, batch_size=1)
-
-    return train_loader, val_loader, test_loader
 
 #--------------------------------------aux---------------------------------------
 def create_dataset_without_true_label(train_file:str, test_file:str,label_name:str, index_col_name:str) -> tuple[pd.DataFrame, pd.DataFrame]:

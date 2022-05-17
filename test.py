@@ -3,7 +3,7 @@ import argparse
 import torch
 
 from dataset import create_datasets, get_train_test_val,get_test_without_label_variable,create_dataset_without_true_label,get_train_test_val_variable
-from model import MulticlassClassification, MulticlassSimpleClassification, init_weights
+from model import MulticlassSimpleClassification
 from utils import save_df_local, str2bool, logging_loader
 logger = logging_loader()
 

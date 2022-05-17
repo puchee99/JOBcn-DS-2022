@@ -5,14 +5,10 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import seaborn as sns
-from tqdm.notebook import tqdm
 import torch
-from ray import tune
-from ray.tune import CLIReporter
-from ray.tune.schedulers import ASHAScheduler
 
-from model import MulticlassClassification, MulticlassSimpleClassification, init_weights
-from dataset import create_datasets, get_dataframe, get_path, get_train_test_val, get_train_test_val_variable, get_classifier_datasets, get_weight_features,get_loaders
+from model import  MulticlassSimpleClassification, init_weights
+from dataset import create_datasets, get_dataframe, get_path, get_train_test_val, get_train_test_val_variable
 from utils import SaveBestModel, save_model, save_plots, save_plot_cm, save_plot_roc, plot_features,str2bool, logging_loader
 save_best_model = SaveBestModel()
 logger = logging_loader()
@@ -99,10 +95,6 @@ def run_model(model,X_train,X_test,y_train, y_test):
             print("Epoch [{}/{}],  Loss: {:.4f}  Accuracy: {:.4f} ".format(epoch+1, EPOCHS,  valid_epoch_loss, valid_epoch_acc))
             logger.info("Epoch [{}/{}],  Loss: {:.4f}  Accuracy: {:.4f} ".format(epoch+1, EPOCHS,  valid_epoch_loss, valid_epoch_acc))
         epoch+=1
-        with tune.checkpoint_dir(epoch) as checkpoint_dir:
-            path = os.path.join(checkpoint_dir, "output/checkpoint")
-            torch.save((model.state_dict(), optimizer.state_dict()), path)
-            tune.report(loss=valid_epoch_loss, accuracy=valid_epoch_acc)
 
     save_model(epoch, model, optimizer, criterion)
     if args['tensorboard']:
@@ -139,7 +131,7 @@ if __name__ == "__main__":
     X_train_t, X_test_t, X_val_t, y_train_t, y_test_t, y_val_t = get_train_test_val_variable(X_train, X_test, X_val, y_train, y_test, y_val)
     model     = MulticlassSimpleClassification(X_train.shape[1], 3).to(device)
     model.apply(init_weights)
-    run_model(model, X_train, X_test, y_train, y_test)
+    run_model(model, X_train_t, X_test_t, y_train_t, y_test_t)
     if args['run_test'] or args['test_without_label']:
         os.system(f"python test.py -v {args['run_test']} -r {args['test_without_label']}")
     
