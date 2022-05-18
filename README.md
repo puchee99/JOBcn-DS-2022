@@ -70,10 +70,6 @@ The objective of this project is to classify insects according to the value of d
 We have the data in a `.csv` where the `Insect` column is the target to predict.
 
 
-Distribution of the data in the variables with a greater correlation with `y`:
-
-![product-screenshot]
-
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -92,12 +88,17 @@ Distribution of the data in the variables with a greater correlation with `y`:
 
 * Take the columns with a correlation greater than 0.05.
 
-* Add new data from bug 2 to level the number of samples. We do not level them completely because we want to maintain consistency with the actual data.   
+
+
+Distribution of the data in the variables with a greater correlation with `y`:
+
+![product-screenshot]
+
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Model
-
+* Before training the model, we added new data from bug 2 to level the number of samples. We do not level them completely because we want to maintain consistency with the actual data. 
 MulticlassSimpleClassification(
 
     (layer1): Linear(in_features=5, out_features=512, bias=True)
