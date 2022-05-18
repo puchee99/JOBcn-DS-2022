@@ -104,13 +104,15 @@ MulticlassSimpleClassification(
   (out): Linear(in_features=64, out_features=3, bias=True)
 )
 
-##### Criterion:
+##### Criterion -> Cross Entropy:
 
 ![criterion]
+[Cross Entropy][cross-entropy-link]
 
-##### Optimizer
+##### Optimizer -> Adam:
 
 ![optimizer]
+[Adam][adam-link]
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -224,4 +226,6 @@ Project Link: [https://github.com/puchee99/JOBcn-DS-2022](https://github.com/puc
 [loss]: output/plots/MulticlassSimpleClassification_loss.png
 [roc]: output/plots/MulticlassSimpleClassification_roc.png
 [criterion]: images/CrossEntropy.png
-[optimizer]: images/CrossEntropy.png
+[optimizer]: images/Adam.png
+[adam-link]: https://pytorch.org/docs/stable/generated/torch.optim.Adam.html#torch.optim.Adam
+[cross-entropy-link]: https://pytorch.org/docs/stable/generated/torch.nn.CrossEntropyLoss.html
