@@ -104,7 +104,7 @@ MulticlassSimpleClassification(
   (out): Linear(in_features=64, out_features=3, bias=True)
 )
 
-##### Criterion -> Cross Entropy:
+##### Criterion --> Cross Entropy:
 
 ![criterion]
 [Cross Entropy][cross-entropy-link]
