@@ -98,13 +98,21 @@ Distribution of the data in the variables with a greater correlation with `y`:
 MulticlassSimpleClassification(
 
     (layer1): Linear(in_features=5, out_features=512, bias=True)
-
+           
+    ReLU(layer1)
+    
     (layer2): Linear(in_features=512, out_features=128, bias=True)
-
+    
+    Sigmoid(layer2)
+    
     (layer3): Linear(in_features=128, out_features=64, bias=True)
-
+    
+    Sigmoid(layer3)
+    
     (out): Linear(in_features=64, out_features=3, bias=True)
-
+    
+    Softmax(out)
+    
 )
 
 ##### Criterion [Cross Entropy][cross-entropy-link]:
