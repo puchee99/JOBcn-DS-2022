@@ -45,10 +45,10 @@
     <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
+      <li><a href="#built-with">Built With</a></li>
       <li><a href="#eda">EDA</a></li>
       <li><a href="#model">Model</a></li>
       <li><a href="#results">Results</a></li>
-      <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
     <li>
@@ -79,9 +79,40 @@ Distribution of the data in the variables with a greater correlation with `y`:
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+### Built With
+
+* [Pytorch](https://pytorch.org/)
+* [scikit-learn](https://scikit-learn.org/)
+* [Numpy](https://numpy.org/)
+* [Pandas](https://pandas.pydata.org/)
+* [Logging](https://docs.python.org/3/library/logging.html)
+* [Seaborn](https://seaborn.pydata.org/)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
 ## EDA
 
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
 ## Model
+
+MulticlassSimpleClassification(
+  (layer1): Linear(in_features=5, out_features=512, bias=True)
+  (layer2): Linear(in_features=512, out_features=128, bias=True)
+  (layer3): Linear(in_features=128, out_features=64, bias=True)
+  (out): Linear(in_features=64, out_features=3, bias=True)
+)
+
+##### Criterion:
+
+![criterion]
+
+##### Optimizer
+
+![optimizer]
+
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Results
 
@@ -104,15 +135,6 @@ The predictions from the `test_x.csv` file can be found in the `output/results` 
 #### ROC:
 ![roc]
 [roc image][roc]
-
-### Built With
-
-* [Pytorch](https://pytorch.org/)
-* [scikit-learn](https://scikit-learn.org/)
-* [Numpy](https://numpy.org/)
-* [Pandas](https://pandas.pydata.org/)
-* [Logging](https://docs.python.org/3/library/logging.html)
-* [Seaborn](https://seaborn.pydata.org/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -201,3 +223,5 @@ Project Link: [https://github.com/puchee99/JOBcn-DS-2022](https://github.com/puc
 [CM]: output/plots/MulticlassSimpleClassification_cm.png
 [loss]: output/plots/MulticlassSimpleClassification_loss.png
 [roc]: output/plots/MulticlassSimpleClassification_roc.png
+[criterion]: images/CrossEntropy.png
+[optimizer]: images/CrossEntropy.png
