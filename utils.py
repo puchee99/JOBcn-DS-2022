@@ -14,6 +14,7 @@ from sklearn.metrics import roc_curve, auc
 from sklearn.preprocessing import OneHotEncoder
 import torch
 
+from dataset import clean_data
 from cgitb import handler
 
 current_day = str(datetime.datetime.now()).split(" ")[0]
@@ -166,16 +167,14 @@ def save_plot_roc(X_test, y_test, model):
     return 
 
 def plot_features(df,y):
-    select_columns = df[["Hour","Sensor_beta","Sensor_alpha_plus","Sensor_gamma"]]
-    df_train = select_columns.copy()
-    names = ['Lepidoptero', 'Himenoptera', 'Diptera'] #[0,1,2]
-    feature_names = list(df_train.columns)
-    X = np.asarray(df_train)    
-
-    fig, (ax1, ax2, ax3) = plt.subplots(1, 3, figsize=(16, 6))
-    one_plot_features(X,names, ax1, feature_names, y,2,3)
-    one_plot_features(X, names, ax2, feature_names, y,1,2)
-    one_plot_features(X, names, ax3, feature_names,y, 1,3)
+    df_train, y, select_columns = clean_data(df, "Insect")
+    len_features = df_train.shape[1]
+    names = df['Insect'].unique()
+    X = np.asarray(df_train)
+    fig, axis = plt.subplots(len_features , len_features, figsize=(20, 20))
+    for j, line in enumerate(axis):
+        for k, ax in enumerate(line):
+            one_plot_features(X,names, ax, select_columns, y,j, k)
     plt.savefig(results_dir_plots+ 'features_distribution.png')
     return
 
@@ -188,11 +187,32 @@ def one_plot_features(X, names, ax , feature_names, y,i, z):
                      label=target_name)
     ax.set_xlabel(feature_names[i])
     ax.set_ylabel(feature_names[z])
-    ax.axis('equal')
+    #ax.axis('equal')
     ax.legend()
     #plt.plot()
     return
 
+def plot_n_classes(df):
+    count = df['Insect'].value_counts()
+    count.plot.bar()
+    plt.ylabel('Number of records')
+    plt.xlabel('Target Class')
+    plt.savefig(results_dir_plots+ 'n_classes.png')
+    return
+
+def dist_plots(df):
+    groupby_gender = df.groupby('Insect')
+    groupby_gender.boxplot(column=["Hour","Sensor_beta","Sensor_gamma","Sensor_alpha_plus"], figsize=(20, 20), fontsize=20)
+    plt.savefig(results_dir_plots+ 'dist_classes.png')
+    return
+
+def plot_corr(df):
+    correlation = df.corr()
+    #display(correlation)
+    plt.figure(figsize=(14, 12))
+    heatmap = sns.heatmap(correlation, annot=True, linewidths=0, vmin=-1, cmap="RdBu_r")
+    plt.savefig(results_dir_plots+ 'correlation_features.png')
+    return
 
 def str2bool(v):
     if isinstance(v, bool):

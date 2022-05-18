@@ -9,7 +9,7 @@ import torch
 
 from model import  MulticlassSimpleClassification, init_weights
 from dataset import create_datasets, get_dataframe, get_path, get_train_test_val, get_train_test_val_variable
-from utils import SaveBestModel, save_model, save_plots, save_plot_cm, save_plot_roc, plot_features,str2bool, logging_loader
+from utils import SaveBestModel, save_model, save_plots, save_plot_cm, save_plot_roc, plot_features,str2bool, logging_loader,plot_n_classes, dist_plots,plot_corr
 save_best_model = SaveBestModel()
 logger = logging_loader()
 device = ('cuda' if torch.cuda.is_available() else 'cpu')
@@ -17,7 +17,7 @@ logger.info(f"Computation device: {device}\n")
 
 #https://machinelearningmastery.com/pytorch-tutorial-develop-deep-learning-models/
 parser = argparse.ArgumentParser()
-parser.add_argument('-e', '--epochs', type=int, default=4000,
+parser.add_argument('-e', '--epochs', type=int, default=20000,
     help='number of epochs to train our network for')
 parser.add_argument('-lr', '--learningrate', type=float, default=0.0007,#1e-4,
     help='lerning rate number to train our network')
@@ -49,7 +49,10 @@ if args['tensorboard']:
 if args['makeplots']:
     path, extension = get_path('train.csv')
     df = get_dataframe(path, extension)
+    plot_n_classes(df)
     plot_features(df,df['Insect'])
+    dist_plots(df)
+    plot_corr(df)
 
 def train(model, X, y, optimizer, criterion):
     model.train()

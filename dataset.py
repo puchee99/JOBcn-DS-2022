@@ -38,7 +38,7 @@ def clean_data(df:pd.DataFrame, label_col_name:str, select_corr_col:bool=True, r
         new_1 = resample(df_1, replace=True, n_samples=1, random_state=123)
         new_2 =  resample(df_2, replace=True, n_samples=1000, random_state=123)
 
-        df_train =pd.concat([df_train, new_0, new_1, new_2])
+        df_train =pd.concat([new_0, new_1, new_2, df_train])
     y = df_train[label_col_name]
     if select_corr_col:
         #grab the variables that are related to the target column

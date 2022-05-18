@@ -45,7 +45,10 @@
     <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
-        <li><a href="#built-with">Built With</a></li>
+      <li><a href="#built-with">Built With</a></li>
+      <li><a href="#eda">EDA</a></li>
+      <li><a href="#model">Model</a></li>
+      <li><a href="#results">Results</a></li>
       </ul>
     </li>
     <li>
@@ -55,7 +58,6 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#results">Results</a></li>
     <li><a href="#contact">Contact</a></li>
   </ol>
 </details>
@@ -68,15 +70,8 @@ The objective of this project is to classify insects according to the value of d
 We have the data in a `.csv` where the `Insect` column is the target to predict.
 
 
-Distribution of the data in the variables with a greater correlation with `y`:
-
-![product-screenshot]
-
-[Features image][product-screenshot]
-
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
 
 ### Built With
 
@@ -86,6 +81,84 @@ Distribution of the data in the variables with a greater correlation with `y`:
 * [Pandas](https://pandas.pydata.org/)
 * [Logging](https://docs.python.org/3/library/logging.html)
 * [Seaborn](https://seaborn.pydata.org/)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+## EDA
+
+Firstly, we will take the columns with a correlation greater than 0.05.
+
+![correlation_features]
+
+The distributions of the important columns are:
+
+![features]
+
+Distributions isolating each type of insect:
+
+![dist-classes]
+
+Finally, before training the model, we added new data from insect 2 to level the number of samples. We do not level them completely because we want to maintain consistency with the actual data. 
+
+![n-classes]
+[number of insects in train.csv data][n-classes]
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+## Model
+
+Composition of our model:
+
+    MulticlassSimpleClassification(
+
+        (layer1): Linear(in_features=5, out_features=512, bias=True)
+              
+        ReLU(layer1)
+        
+        (layer2): Linear(in_features=512, out_features=128, bias=True)
+        
+        Sigmoid(layer2)
+        
+        (layer3): Linear(in_features=128, out_features=64, bias=True)
+        
+        Sigmoid(layer3)
+        
+        (out): Linear(in_features=64, out_features=3, bias=True)
+        
+        Softmax(out)
+
+    )
+
+##### Criterion: [Cross Entropy][cross-entropy-link]
+
+<!-- ![criterion] -->
+
+
+##### Optimizer: [Adam][adam-link]
+
+<!-- ![optimizer] -->
+
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+## Results
+
+In the best training we have an accuracy of 0.923 predicting test set(20% of data from `train.csv`).
+
+The predictions from the `test_x.csv` file can be found in the `output/results` folder in the `results.csv` file.
+
+#### ACCURACY:
+![accuracy]
+
+#### CONFUSION MATRIX:
+![CM]
+
+#### LOSS:
+![loss]
+
+#### ROC:
+![roc]
+
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -124,7 +197,7 @@ We will create a virtual environment with `python3`
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Usage
-The train.py and test.py documents can be executed with bash using different arguments.
+The `train.py` and `test.py` documents can be executed with bash using different arguments.
 
 * To get the information of the arguments use:
     ```sh
@@ -142,29 +215,6 @@ The train.py and test.py documents can be executed with bash using different arg
     ```sh
     python test.py
     ```
-
-
-## Results
-
-In the best training we have an accuracy of 0.923 predicting test set(20% of data from `train.csv`).
-
-The predictions from the `test_x.csv` file can be found in the `output/results` folder in the `results.csv` file.
-
-#### ACCURACY:
-![accuracy]
-[accuracy image][accuracy]
-
-#### CONFUSION MATRIX:
-![CM]
-[CM image][CM]
-
-#### LOSS:
-![loss]
-[loss image][loss]
-
-#### ROC:
-![roc]
-[roc image][roc]
 
 <!-- CONTACT -->
 ## Contact
@@ -193,7 +243,15 @@ Project Link: [https://github.com/puchee99/JOBcn-DS-2022](https://github.com/puc
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/arnau-puche-vila-ds/
 [product-screenshot]: output/plots/features_distribution.png
+[features]: output/plots/features_distribution.png
+[n-classes]: output/plots/n_classes.png
+[dist-classes]: output/plots/dist_classes.png
+[correlation_features]: output/plots/correlation_features.png
 [accuracy]: output/plots/MulticlassSimpleClassification_accuracy.png
 [CM]: output/plots/MulticlassSimpleClassification_cm.png
 [loss]: output/plots/MulticlassSimpleClassification_loss.png
 [roc]: output/plots/MulticlassSimpleClassification_roc.png
+[criterion]: images/CrossEntropy.png
+[optimizer]: images/Adam.png
+[adam-link]: https://pytorch.org/docs/stable/generated/torch.optim.Adam.html#torch.optim.Adam
+[cross-entropy-link]: https://pytorch.org/docs/stable/generated/torch.nn.CrossEntropyLoss.html
