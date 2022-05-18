@@ -90,6 +90,9 @@ Distribution of the data in the variables with a greater correlation with `y`:
 
 ## EDA
 
+* Take the columns with a correlation greater than 0.05.
+
+* Add new data from bug 2 to level the number of samples. We do not level them completely because we want to maintain consistency with the actual data.   
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -99,20 +102,20 @@ MulticlassSimpleClassification(
 
     (layer1): Linear(in_features=5, out_features=512, bias=True)
            
-    ReLU(layer1)
+      ReLU(layer1)
     
     (layer2): Linear(in_features=512, out_features=128, bias=True)
     
-    Sigmoid(layer2)
+      Sigmoid(layer2)
     
     (layer3): Linear(in_features=128, out_features=64, bias=True)
     
-    Sigmoid(layer3)
+      Sigmoid(layer3)
     
     (out): Linear(in_features=64, out_features=3, bias=True)
     
-    Softmax(out)
-    
+      Softmax(out)
+
 )
 
 ##### Criterion [Cross Entropy][cross-entropy-link]:
