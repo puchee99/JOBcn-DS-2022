@@ -86,43 +86,47 @@ We have the data in a `.csv` where the `Insect` column is the target to predict.
 
 ## EDA
 
-* Take the columns with a correlation greater than 0.05.
+Firstly, we will take the columns with a correlation greater than 0.05.
 
 ![correlation_features]
 
-Distribution of the data in the variables with a greater correlation with `y`:
+The distributions of the important columns are:
 
 ![features]
+
+Distributions isolating each type of insect:
+
 ![dist-classes]
 
+Finally, before training the model, we added new data from insect 2 to level the number of samples. We do not level them completely because we want to maintain consistency with the actual data. 
 
+![n-classes]
+[number of insects in train.csv data][n-classes]
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Model
-* Before training the model, we added new data from bug 2 to level the number of samples. We do not level them completely because we want to maintain consistency with the actual data. 
 
-![n-classes]
+Composition of our model:
+    MulticlassSimpleClassification(
 
-MulticlassSimpleClassification(
+        (layer1): Linear(in_features=5, out_features=512, bias=True)
+              
+        ReLU(layer1)
+        
+        (layer2): Linear(in_features=512, out_features=128, bias=True)
+        
+        Sigmoid(layer2)
+        
+        (layer3): Linear(in_features=128, out_features=64, bias=True)
+        
+        Sigmoid(layer3)
+        
+        (out): Linear(in_features=64, out_features=3, bias=True)
+        
+        Softmax(out)
 
-    (layer1): Linear(in_features=5, out_features=512, bias=True)
-           
-    ReLU(layer1)
-    
-    (layer2): Linear(in_features=512, out_features=128, bias=True)
-    
-    Sigmoid(layer2)
-    
-    (layer3): Linear(in_features=128, out_features=64, bias=True)
-    
-    Sigmoid(layer3)
-    
-    (out): Linear(in_features=64, out_features=3, bias=True)
-    
-    Softmax(out)
-
-)
+    )
 
 ##### Criterion [Cross Entropy][cross-entropy-link]:
 
