@@ -45,7 +45,10 @@
     <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
-        <li><a href="#built-with">Built With</a></li>
+      <li><a href="#eda">EDA</a></li>
+      <li><a href="#model">Model</a></li>
+      <li><a href="#results">Results</a></li>
+      <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
     <li>
@@ -55,7 +58,6 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#results">Results</a></li>
     <li><a href="#contact">Contact</a></li>
   </ol>
 </details>
@@ -77,6 +79,31 @@ Distribution of the data in the variables with a greater correlation with `y`:
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+## EDA
+
+## Model
+
+## Results
+
+In the best training we have an accuracy of 0.923 predicting test set(20% of data from `train.csv`).
+
+The predictions from the `test_x.csv` file can be found in the `output/results` folder in the `results.csv` file.
+
+#### ACCURACY:
+![accuracy]
+[accuracy image][accuracy]
+
+#### CONFUSION MATRIX:
+![CM]
+[CM image][CM]
+
+#### LOSS:
+![loss]
+[loss image][loss]
+
+#### ROC:
+![roc]
+[roc image][roc]
 
 ### Built With
 
@@ -142,29 +169,6 @@ The train.py and test.py documents can be executed with bash using different arg
     ```sh
     python test.py
     ```
-
-
-## Results
-
-In the best training we have an accuracy of 0.923 predicting test set(20% of data from `train.csv`).
-
-The predictions from the `test_x.csv` file can be found in the `output/results` folder in the `results.csv` file.
-
-#### ACCURACY:
-![accuracy]
-[accuracy image][accuracy]
-
-#### CONFUSION MATRIX:
-![CM]
-[CM image][CM]
-
-#### LOSS:
-![loss]
-[loss image][loss]
-
-#### ROC:
-![roc]
-[roc image][roc]
 
 <!-- CONTACT -->
 ## Contact
