@@ -206,6 +206,14 @@ def dist_plots(df):
     plt.savefig(results_dir_plots+ 'dist_classes.png')
     return
 
+def plot_corr(df):
+    correlation = df.corr()
+    #display(correlation)
+    plt.figure(figsize=(14, 12))
+    heatmap = sns.heatmap(correlation, annot=True, linewidths=0, vmin=-1, cmap="RdBu_r")
+    plt.savefig(results_dir_plots+ 'correlation_features.png')
+    return
+
 def str2bool(v):
     if isinstance(v, bool):
         return v

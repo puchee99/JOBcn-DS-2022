@@ -9,7 +9,7 @@ import torch
 
 from model import  MulticlassSimpleClassification, init_weights
 from dataset import create_datasets, get_dataframe, get_path, get_train_test_val, get_train_test_val_variable
-from utils import SaveBestModel, save_model, save_plots, save_plot_cm, save_plot_roc, plot_features,str2bool, logging_loader,plot_n_classes, dist_plots
+from utils import SaveBestModel, save_model, save_plots, save_plot_cm, save_plot_roc, plot_features,str2bool, logging_loader,plot_n_classes, dist_plots,plot_corr
 save_best_model = SaveBestModel()
 logger = logging_loader()
 device = ('cuda' if torch.cuda.is_available() else 'cpu')
@@ -52,6 +52,7 @@ if args['makeplots']:
     plot_n_classes(df)
     plot_features(df,df['Insect'])
     dist_plots(df)
+    plot_corr(df)
 
 def train(model, X, y, optimizer, criterion):
     model.train()
