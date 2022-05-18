@@ -96,20 +96,25 @@ Distribution of the data in the variables with a greater correlation with `y`:
 ## Model
 
 MulticlassSimpleClassification(
-  (layer1): Linear(in_features=5, out_features=512, bias=True)
-  (layer2): Linear(in_features=512, out_features=128, bias=True)
-  (layer3): Linear(in_features=128, out_features=64, bias=True)
-  (out): Linear(in_features=64, out_features=3, bias=True)
+
+    (layer1): Linear(in_features=5, out_features=512, bias=True)
+
+    (layer2): Linear(in_features=512, out_features=128, bias=True)
+
+    (layer3): Linear(in_features=128, out_features=64, bias=True)
+
+    (out): Linear(in_features=64, out_features=3, bias=True)
+
 )
 
 ##### Criterion [Cross Entropy][cross-entropy-link]:
 
-![criterion]
+<!-- ![criterion] -->
 
 
 ##### Optimizer [Adam][adam-link]:
 
-![optimizer]
+<!-- ![optimizer] -->
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -131,7 +136,7 @@ The predictions from the `test_x.csv` file can be found in the `output/results` 
 
 #### ROC:
 ![roc]
-
+s
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
