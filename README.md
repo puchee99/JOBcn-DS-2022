@@ -104,15 +104,15 @@ MulticlassSimpleClassification(
   (out): Linear(in_features=64, out_features=3, bias=True)
 )
 
-##### Criterion --> Cross Entropy:
-
-![criterion]
+##### Criterion:
 [Cross Entropy][cross-entropy-link]
+![criterion]
 
-##### Optimizer -> Adam:
 
-![optimizer]
+##### Optimizer:
 [Adam][adam-link]
+![optimizer]
+
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
