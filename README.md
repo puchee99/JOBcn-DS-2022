@@ -129,12 +129,12 @@ Composition of our model:
 
     )
 
-##### Criterion [Cross Entropy][cross-entropy-link]:
+##### Criterion: [Cross Entropy][cross-entropy-link]
 
 <!-- ![criterion] -->
 
 
-##### Optimizer [Adam][adam-link]:
+##### Optimizer: [Adam][adam-link]
 
 <!-- ![optimizer] -->
 
@@ -158,7 +158,8 @@ The predictions from the `test_x.csv` file can be found in the `output/results` 
 
 #### ROC:
 ![roc]
-s
+
+
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 

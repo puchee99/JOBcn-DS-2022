@@ -17,7 +17,7 @@ logger.info(f"Computation device: {device}\n")
 
 #https://machinelearningmastery.com/pytorch-tutorial-develop-deep-learning-models/
 parser = argparse.ArgumentParser()
-parser.add_argument('-e', '--epochs', type=int, default=4,
+parser.add_argument('-e', '--epochs', type=int, default=20000,
     help='number of epochs to train our network for')
 parser.add_argument('-lr', '--learningrate', type=float, default=0.0007,#1e-4,
     help='lerning rate number to train our network')
