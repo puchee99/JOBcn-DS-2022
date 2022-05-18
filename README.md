@@ -108,6 +108,7 @@ Finally, before training the model, we added new data from insect 2 to level the
 ## Model
 
 Composition of our model:
+
     MulticlassSimpleClassification(
 
         (layer1): Linear(in_features=5, out_features=512, bias=True)
