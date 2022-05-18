@@ -74,8 +74,6 @@ Distribution of the data in the variables with a greater correlation with `y`:
 
 ![product-screenshot]
 
-[Features image][product-screenshot]
-
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -109,8 +107,8 @@ MulticlassSimpleClassification(
 ![criterion]
 
 
-##### Optimizer:
-[Adam][adam-link]
+##### Optimizer [Adam][adam-link]:
+
 ![optimizer]
 
 
@@ -124,19 +122,15 @@ The predictions from the `test_x.csv` file can be found in the `output/results` 
 
 #### ACCURACY:
 ![accuracy]
-[accuracy image][accuracy]
 
 #### CONFUSION MATRIX:
 ![CM]
-[CM image][CM]
 
 #### LOSS:
 ![loss]
-[loss image][loss]
 
 #### ROC:
 ![roc]
-[roc image][roc]
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
