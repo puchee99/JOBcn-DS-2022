@@ -92,6 +92,7 @@ We have the data in a `.csv` where the `Insect` column is the target to predict.
 Distribution of the data in the variables with a greater correlation with `y`:
 
 ![features]
+![dist-classes]
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -235,7 +236,8 @@ Project Link: [https://github.com/puchee99/JOBcn-DS-2022](https://github.com/puc
 [linkedin-url]: https://www.linkedin.com/in/arnau-puche-vila-ds/
 [product-screenshot]: output/plots/features_distribution.png
 [features]: output/plots/features_distribution.png
-[n-classes]: output/plots/features_distribution.png
+[n-classes]: output/plots/n_classes.png
+[dist-classes]: output/plots/dist_classes.png
 [accuracy]: output/plots/MulticlassSimpleClassification_accuracy.png
 [CM]: output/plots/MulticlassSimpleClassification_cm.png
 [loss]: output/plots/MulticlassSimpleClassification_loss.png

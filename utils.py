@@ -200,6 +200,12 @@ def plot_n_classes(df):
     plt.savefig(results_dir_plots+ 'n_classes.png')
     return
 
+def dist_plots(df):
+    groupby_gender = df.groupby('Insect')
+    groupby_gender.boxplot(column=["Hour","Sensor_beta","Sensor_gamma","Sensor_alpha_plus"], figsize=(20, 20), fontsize=20)
+    plt.savefig(results_dir_plots+ 'dist_classes.png')
+    return
+
 def str2bool(v):
     if isinstance(v, bool):
         return v
