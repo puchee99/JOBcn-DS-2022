@@ -192,6 +192,13 @@ def one_plot_features(X, names, ax , feature_names, y,i, z):
     #plt.plot()
     return
 
+def plot_n_classes(df):
+    count = df['Insect'].value_counts()
+    count.plot.bar()
+    plt.ylabel('Number of records')
+    plt.xlabel('Target Class')
+    plt.savefig(results_dir_plots+ 'n_classes.png')
+    return
 
 def str2bool(v):
     if isinstance(v, bool):

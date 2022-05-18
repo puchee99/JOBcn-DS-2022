@@ -89,33 +89,35 @@ We have the data in a `.csv` where the `Insect` column is the target to predict.
 * Take the columns with a correlation greater than 0.05.
 
 
-
 Distribution of the data in the variables with a greater correlation with `y`:
 
-![product-screenshot]
+![features]
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Model
 * Before training the model, we added new data from bug 2 to level the number of samples. We do not level them completely because we want to maintain consistency with the actual data. 
+
+![n-classes]
+
 MulticlassSimpleClassification(
 
     (layer1): Linear(in_features=5, out_features=512, bias=True)
            
-      ReLU(layer1)
+    ReLU(layer1)
     
     (layer2): Linear(in_features=512, out_features=128, bias=True)
     
-      Sigmoid(layer2)
+    Sigmoid(layer2)
     
     (layer3): Linear(in_features=128, out_features=64, bias=True)
     
-      Sigmoid(layer3)
+    Sigmoid(layer3)
     
     (out): Linear(in_features=64, out_features=3, bias=True)
     
-      Softmax(out)
+    Softmax(out)
 
 )
 
@@ -186,7 +188,7 @@ We will create a virtual environment with `python3`
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Usage
-The train.py and test.py documents can be executed with bash using different arguments.
+The `train.py` and `test.py` documents can be executed with bash using different arguments.
 
 * To get the information of the arguments use:
     ```sh
@@ -232,6 +234,8 @@ Project Link: [https://github.com/puchee99/JOBcn-DS-2022](https://github.com/puc
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/arnau-puche-vila-ds/
 [product-screenshot]: output/plots/features_distribution.png
+[features]: output/plots/features_distribution.png
+[n-classes]: output/plots/features_distribution.png
 [accuracy]: output/plots/MulticlassSimpleClassification_accuracy.png
 [CM]: output/plots/MulticlassSimpleClassification_cm.png
 [loss]: output/plots/MulticlassSimpleClassification_loss.png
